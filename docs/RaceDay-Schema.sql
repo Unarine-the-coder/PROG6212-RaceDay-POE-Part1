@@ -142,3 +142,10 @@ INSERT INTO [User] (FirstName, LastName, Email, PasswordHash, PhoneNumber, DateO
 ('Alice', 'Mokoena', 'alice.runner@raceday.co.za', 'hashed_pw_3', '0712345678', '1990-06-10'),
 ('Peter', 'van der Merwe', 'peter.runner@raceday.co.za', 'hashed_pw_4', '0723456789', '1985-09-25');
 GO
+
+-- Insert Events (3 events)
+INSERT INTO [Event] (EventName, Description, StartDate, EndDate, Location, OrganiserId) VALUES
+('Durban City Run', 'Annual 10km and 21km road race through Durban CBD.', '2026-06-15 07:00:00', '2026-06-15 12:00:00', 'Durban City Hall', 1),
+('Comrades Marathon', 'Ultra-marathon from Pietermaritzburg to Durban.', '2026-08-29 05:30:00', '2026-08-29 17:30:00', 'Pietermaritzburg City Hall', 1),
+('Cape Town Cycle Tour', 'Scenic cycle tour around Cape Peninsula.', '2026-03-07 06:00:00', '2026-03-07 14:00:00', 'Cape Town Stadium', 2);
+GO
