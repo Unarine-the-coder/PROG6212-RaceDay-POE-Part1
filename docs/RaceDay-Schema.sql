@@ -67,3 +67,29 @@ CREATE TABLE [Category] (
     CreatedAt DATETIME DEFAULT GETDATE()
 );
 GO
+
+-- ============================================================
+-- 6. ENROLMENT TABLE
+-- ============================================================
+CREATE TABLE [Enrolment] (
+    EnrolmentId INT IDENTITY(1,1) PRIMARY KEY,
+    ParticipantId INT NOT NULL,
+    EventCategoryId INT NOT NULL,
+    EnrolmentDate DATETIME DEFAULT GETDATE(),
+    Status NVARCHAR(20) DEFAULT 'Active',
+    CreatedAt DATETIME DEFAULT GETDATE()
+);
+GO
+
+-- ============================================================
+-- 7. RESULT TABLE
+-- ============================================================
+CREATE TABLE [Result] (
+    ResultId INT IDENTITY(1,1) PRIMARY KEY,
+    EnrolmentId INT NOT NULL,
+    Score DECIMAL(5,2) NULL,
+    Grade NVARCHAR(10) NULL,
+    Remarks NVARCHAR(MAX) NULL,
+    DateRecorded DATETIME DEFAULT GETDATE()
+);
+GO
