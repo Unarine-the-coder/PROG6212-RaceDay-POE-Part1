@@ -41,3 +41,29 @@ CREATE TABLE [EventCategory] (
     CategoryId INT NOT NULL
 );
 GO
+
+-- ============================================================
+-- 4. EVENT TABLE
+-- ============================================================
+CREATE TABLE [Event] (
+    EventId INT IDENTITY(1,1) PRIMARY KEY,
+    EventName NVARCHAR(200) NOT NULL,
+    Description NVARCHAR(MAX) NULL,
+    StartDate DATETIME NOT NULL,
+    EndDate DATETIME NOT NULL,
+    Location NVARCHAR(200) NOT NULL,
+    OrganiserId INT NOT NULL,
+    CreatedAt DATETIME DEFAULT GETDATE()
+);
+GO
+
+-- ============================================================
+-- 5. CATEGORY TABLE
+-- ============================================================
+CREATE TABLE [Category] (
+    CategoryId INT IDENTITY(1,1) PRIMARY KEY,
+    CategoryName NVARCHAR(100) NOT NULL,
+    Description NVARCHAR(MAX) NULL,
+    CreatedAt DATETIME DEFAULT GETDATE()
+);
+GO
