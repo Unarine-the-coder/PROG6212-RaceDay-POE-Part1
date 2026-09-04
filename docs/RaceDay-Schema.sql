@@ -124,3 +124,21 @@ ALTER TABLE [Enrolment] ADD CONSTRAINT CHK_Enrolment_Status CHECK (Status IN ('A
 
 -- Result: EnrolmentId references Enrolment
 ALTER TABLE [Result] ADD CONSTRAINT FK_Result_Enrolment FOREIGN KEY (EnrolmentId) REFERENCES [Enrolment](EnrolmentId) ON DELETE CASCADE;
+
+-- ============================================================
+-- SEED DATA
+-- ============================================================
+
+-- Insert Roles
+INSERT INTO [Role] (RoleName, Description) VALUES
+('Organiser', 'Can create, edit, and delete events, manage categories, capture results.'),
+('Participant', 'Can browse events, enrol, view own enrolments and results.');
+GO
+
+-- Insert Users (2 Organisers, 2 Participants)
+INSERT INTO [User] (FirstName, LastName, Email, PasswordHash, PhoneNumber, DateOfBirth) VALUES
+('John', 'Doe', 'john.organiser@raceday.co.za', 'hashed_pw_1', '0821234567', '1980-05-15'),
+('Jane', 'Smith', 'jane.organiser@raceday.co.za', 'hashed_pw_2', '0839876543', '1975-11-20'),
+('Alice', 'Mokoena', 'alice.runner@raceday.co.za', 'hashed_pw_3', '0712345678', '1990-06-10'),
+('Peter', 'van der Merwe', 'peter.runner@raceday.co.za', 'hashed_pw_4', '0723456789', '1985-09-25');
+GO
