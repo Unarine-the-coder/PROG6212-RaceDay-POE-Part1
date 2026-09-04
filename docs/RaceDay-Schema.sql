@@ -149,3 +149,11 @@ INSERT INTO [Event] (EventName, Description, StartDate, EndDate, Location, Organ
 ('Comrades Marathon', 'Ultra-marathon from Pietermaritzburg to Durban.', '2026-08-29 05:30:00', '2026-08-29 17:30:00', 'Pietermaritzburg City Hall', 1),
 ('Cape Town Cycle Tour', 'Scenic cycle tour around Cape Peninsula.', '2026-03-07 06:00:00', '2026-03-07 14:00:00', 'Cape Town Stadium', 2);
 GO
+
+-- Insert Categories
+INSERT INTO [Category] (CategoryName, Description) VALUES
+('10km', 'Short distance road run – suitable for beginners.'),
+('21km', 'Half marathon distance.'),
+('Ultra Marathon', 'Extreme distance – 87km.'),
+('Cycle Tour', '109km scenic cycling route.');
+GO
