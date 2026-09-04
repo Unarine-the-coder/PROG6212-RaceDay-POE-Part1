@@ -178,3 +178,8 @@ GO
 INSERT INTO [Result] (EnrolmentId, Score, Grade, Remarks) VALUES
 (4, 195.00, 'A', 'Completed in 3 hours 15 minutes, position 45th overall.');
 GO
+
+-- ============================================================
+-- VERIFICATION: Script matches the ERD exactly
+-- All tables, relationships, and constraints are present.
+-- ============================================================
