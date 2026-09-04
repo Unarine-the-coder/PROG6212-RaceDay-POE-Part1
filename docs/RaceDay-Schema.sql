@@ -157,3 +157,11 @@ INSERT INTO [Category] (CategoryName, Description) VALUES
 ('Ultra Marathon', 'Extreme distance – 87km.'),
 ('Cycle Tour', '109km scenic cycling route.');
 GO
+
+-- Link Events to Categories (EventCategory junction)
+INSERT INTO [EventCategory] (EventId, CategoryId) VALUES 
+(1, 1), -- Durban City Run -> 10km
+(1, 2), -- Durban City Run -> 21km
+(2, 3), -- Comrades -> Ultra Marathon
+(3, 4); -- Cape Town Cycle Tour -> Cycle Tour
+GO
