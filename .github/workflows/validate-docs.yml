@@ -1,0 +1,39 @@
+name: Validate Documentation
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  check-docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Check /docs folder exists
+      run: |
+        if [ ! -d "./docs" ]; then
+          echo "❌ /docs folder is missing!"
+          exit 1
+        fi
+    - name: Check ERD exists
+      run: |
+        if [ ! -f "./docs/ERD.png" ]; then
+          echo "❌ ERD.png is missing in /docs!"
+          exit 1
+        fi
+    - name: Check Endpoint Plan exists
+      run: |
+        if [ ! -f "./docs/Endpoint-Plan.md" ]; then
+          echo "❌ Endpoint-Plan.md is missing in /docs!"
+          exit 1
+        fi
+    - name: Check SQL Script exists
+      run: |
+        if [ ! -f "./docs/RaceDay-Schema.sql" ]; then
+          echo "❌ RaceDay-Schema.sql is missing in /docs!"
+          exit 1
+        fi
+    - name: Success
+      run: echo "✅ All Part 1 documentation is present!"
