@@ -45,7 +45,9 @@ GitHub Actions is configured to validate the repository structure for Part 1. Th
 
 ✅ **Current Build Status:**
 
-![CI/CD Build Status](https://img.shields.io/badge/build-passing-brightgreen) *(Screenshot of the green build will be added here once the workflow runs successfully.)*
+![CI/CD Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+
+![Green Build Screenshot](docs/green-build.png)
 
 A screenshot of the successful green build is also available in the `/docs` folder (or will be attached in a future commit).
 
