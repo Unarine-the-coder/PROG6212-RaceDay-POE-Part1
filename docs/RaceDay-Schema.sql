@@ -165,3 +165,16 @@ INSERT INTO [EventCategory] (EventId, CategoryId) VALUES
 (2, 3), -- Comrades -> Ultra Marathon
 (3, 4); -- Cape Town Cycle Tour -> Cycle Tour
 GO
+
+-- Insert Enrolments
+INSERT INTO [Enrolment] (ParticipantId, EventCategoryId, Status) VALUES
+(3, 1, 'Active'), -- Alice -> 10km
+(4, 2, 'Active'), -- Peter -> 21km
+(3, 3, 'Active'), -- Alice -> Ultra
+(4, 4, 'Completed'); -- Peter -> Cycle Tour
+GO
+
+-- Insert Results (for completed enrolment)
+INSERT INTO [Result] (EnrolmentId, Score, Grade, Remarks) VALUES
+(4, 195.00, 'A', 'Completed in 3 hours 15 minutes, position 45th overall.');
+GO
