@@ -51,19 +51,6 @@ GitHub Actions is configured to validate the repository structure for Part 1. Th
 
 A screenshot of the successful green build is also available in the `/docs` folder (or will be attached in a future commit).
 
----
-
-## Video Presentation
-
-An unlisted YouTube video walkthrough for Part 1 is available here:
-
-🔗 **[Click here to watch the video](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)**  
-*(Replace the link above with your actual YouTube video URL after uploading.)*
-
-The video covers:
-- The ERD design decisions and entity relationships.
-- The full API endpoint plan and why specific endpoints were chosen.
-- A live run of the SQL script in SSMS.
 
 ---
 
@@ -79,7 +66,7 @@ PROG6212-RaceDay-POE-Part1/
 ├── README.md # This file
 └── .gitignore # Visual Studio Git ignore file
 
-text
+
 
 ---
 
