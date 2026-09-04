@@ -1,0 +1,34 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+packages/
+*.user
+*.suo
+*.cache
+*.bak
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# Mac OS
+.DS_Store
+
+# VS Code
+.vscode/
