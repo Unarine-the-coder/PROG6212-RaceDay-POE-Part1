@@ -93,3 +93,34 @@ CREATE TABLE [Result] (
     DateRecorded DATETIME DEFAULT GETDATE()
 );
 GO
+
+-- ============================================================
+-- FOREIGN KEYS AND CONSTRAINTS
+-- ============================================================
+
+-- Event: OrganiserId references User
+ALTER TABLE [Event] ADD CONSTRAINT FK_Event_Organiser FOREIGN KEY (OrganiserId) REFERENCES [User](UserId) ON DELETE CASCADE;
+
+-- EventCategory: EventId references Event
+ALTER TABLE [EventCategory] ADD CONSTRAINT FK_EventCategory_Event FOREIGN KEY (EventId) REFERENCES [Event](EventId) ON DELETE CASCADE;
+
+-- EventCategory: CategoryId references Category
+ALTER TABLE [EventCategory] ADD CONSTRAINT FK_EventCategory_Category FOREIGN KEY (CategoryId) REFERENCES [Category](CategoryId) ON DELETE CASCADE;
+
+-- EventCategory: Unique constraint to prevent duplicates
+ALTER TABLE [EventCategory] ADD CONSTRAINT UQ_EventCategory_Event_Category UNIQUE (EventId, CategoryId);
+
+-- Enrolment: ParticipantId references User
+ALTER TABLE [Enrolment] ADD CONSTRAINT FK_Enrolment_Participant FOREIGN KEY (ParticipantId) REFERENCES [User](UserId) ON DELETE CASCADE;
+
+-- Enrolment: EventCategoryId references EventCategory
+ALTER TABLE [Enrolment] ADD CONSTRAINT FK_Enrolment_EventCategory FOREIGN KEY (EventCategoryId) REFERENCES [EventCategory](EventCategoryId) ON DELETE CASCADE;
+
+-- Enrolment: Unique constraint to prevent duplicate enrolments
+ALTER TABLE [Enrolment] ADD CONSTRAINT UQ_Enrolment_Participant_Category UNIQUE (ParticipantId, EventCategoryId);
+
+-- Enrolment: Check constraint for Status
+ALTER TABLE [Enrolment] ADD CONSTRAINT CHK_Enrolment_Status CHECK (Status IN ('Active', 'Cancelled', 'Completed'));
+
+-- Result: EnrolmentId references Enrolment
+ALTER TABLE [Result] ADD CONSTRAINT FK_Result_Enrolment FOREIGN KEY (EnrolmentId) REFERENCES [Enrolment](EnrolmentId) ON DELETE CASCADE;
