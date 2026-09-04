@@ -180,6 +180,6 @@ INSERT INTO [Result] (EnrolmentId, Score, Grade, Remarks) VALUES
 GO
 
 -- ============================================================
--- VERIFICATION: Script matches the ERD exactly
+-- VERIFICATION: Script matches the ERD exactly.
 -- All tables, relationships, and constraints are present.
 -- ============================================================
